@@ -1,0 +1,46 @@
+.entete, .conteneur{
+    width: 60%;
+    margin-left: 20%;
+    font-family: berlin sans fb; 
+}
+
+div.entete, div.conteneur{
+    border: solid black 1px;
+    box-shadow: 7px 7px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(232, 239, 247);
+}
+div.entete{
+    text-align: center;
+}
+
+.entete em{
+    font-weight: bold;
+}
+
+span.annee{
+    font-weight: bold;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+div.adresse{
+    text-align: right;    
+    margin-bottom: 10px;
+}
+h2{
+    padding-left: 10px;
+    color: white;
+   background-color: rgb(194, 213, 235);
+   border-radius: 10px;
+   box-shadow: 7px 7px 10px;
+  
+}
+
+h3{
+   display: inline; 
+}
+
