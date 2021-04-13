@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les selecteurs CSS3</title>
+</head>
+
+<body>
+
+    <!-- les selecteurs 2.1 permettent par le biais d'une "requete CSS" d'atteindre
+        un ensemble de noeud dans un document HTML et de lui donner un style
+
+        - * -> tous les elements
+        - E -> tout element E
+        - E F -> tout element F qui est un descendant de l'element E
+        - E > F -> tout element F, element enfant de l'element E (parent/enfant)
+        - E : first-child -> un element E aussi le premier enfant de son element parent
+        - E : active, E : hover, E : focus -> correspont à l'élement E au cours de certaines actions de l'utilisateur
+        - E [foo="warning"]
+
+
+         -->
+    <div>
+        <p>Je suis le premier paragraphe</p>
+        <p>Je suis le deuxieme paragraphe</p>
+        <p>Je suis le troisieme paragraphe</p>
+    </div>
+    <hr>
+    <input type="text" placeholder="Entrez un nom">
+    <hr>
+
+    <p class="exemple">Je n'ai pas d'attribut title</p>
+    <p class="exemple" title="comment">J'ai un attribut title comment</p>
+    <p class="exemple" title="evaluation">J'ai un attribut title evaluation</p>
+    <p class="exemple" title="essai">J'ai un attribut title essai</p>
+    <p class="exemple" title="esso">J'ai un attribut title esso</p>
+    <hr>
+    <div class="exemple">
+        <div>Je suis l'element div (element particulier)</div>
+        <p>Je suis un p qui suit le div</p>
+        <p>Je suis un p qui suit le div</p>
+        <span>Je suis un span</span>
+        <p>Je suis un p qui ne suit pas le div</p>
+    </div>
+    <hr>
+    <table class="exempleTable">
+        <tr>
+            <td>1ere ligne</td>
+        </tr>
+        <tr>
+            <td>2eme ligne</td>
+        </tr>
+        <tr>
+            <td>3eme ligne</td>
+        </tr>
+        <tr>
+            <td>4eme ligne</td>
+        </tr>
+        <tr>
+            <td>5eme ligne</td>
+        </tr>
+        <tr>
+            <td>6eme ligne</td>
+        </tr>
+        <tr>
+            <td>7eme ligne</td>
+        </tr>
+        <tr>
+            <td>8eme ligne</td>
+        </tr>
+
+    </table>
+    <table class="exempleTable2">
+        <tr>
+            <td>1ere ligne</td>
+        </tr>
+        <tr>
+            <td>2eme ligne</td>
+        </tr>
+        <tr>
+            <td>3eme ligne</td>
+        </tr>
+        <tr>
+            <td>4eme ligne</td>
+        </tr>
+        <tr>
+            <td>5eme ligne</td>
+        </tr>
+        <tr>
+            <td>6eme ligne</td>
+        </tr>
+        <tr>
+            <td>7eme ligne</td>
+        </tr>
+        <tr>
+            <td>8eme ligne</td>
+        </tr>
+
+    </table>
+
+
+    <style>
+        div p:first-child {
+            font-weight: bold;
+        }
+
+        input[type="text"]:focus {
+            background: red;
+        }
+        p.exemple{
+            margin: 0;
+            padding: 10px;
+            color: black;
+        }
+        /* [attr^="stringValue"] 
+        - permet de selectionner un element DOM dont l'attribut 'attr' commence exactement par la valeur "stringValue"
+        - ici, permet d'appliquer du style à toutes les balises p dont la valeur de l'attribut title commence par "ess"
+         */
+        p.exemple[title^="ess"]{
+            color: blue;
+            background: red;
+        }
+        /* [attr$="stringValue"] 
+        - permet de selectionner un element DOM dont l'attribut 'attr' finit par la valeur "stringValue"
+        - ici, permet d'appliquer du style à toutes les balises p dont la valeur de l'attribut title finit par "ent"
+         */
+        p.exemple[title$="ent"]{
+            color: red;
+            background: blue;
+        }
+        /* [attr*="stringValue"] 
+        - permet de selectionner un element DOM dont l'attribut 'attr' comporte au moins une fois par la valeur "stringValue"
+        - ici, permet d'appliquer du style à toutes les balises p dont la valeur de l'attribut title comporte "val"
+         */
+         p.exemple[title*="val"]{
+            color: yellow;
+            background: green;
+        }
+
+        div.exemple div~p{
+            color: #fff;
+            margin: 20px;
+            width: 200px;
+            padding: 5px;
+            border: 1px solid #333;
+            background: #006644;
+        }
+
+
+        .exempleTable, .exempleTable2{
+            width: 100%;
+            border: 1px solid #444;
+        }
+        /* :nth-child(expression) 
+        ce selecteur permet de cibler tous les element en se 
+        */
+
+        /* tous les enfants aux numéros pairs */
+        .exempleTable tr:nth-child(even){
+            background: #999999;
+            text-shadow: 2px 2px 5px #111;
+            color: #fff;
+        }
+
+        /* tous les enfants auxx numéros impairs */
+        .exempleTable tr:nth-child(odd){
+            background: #990000;
+            color: #fff;
+        }
+
+        /* tous les 3 enfants */
+        .exempleTable tr:nth-child(3n){
+            background: #045FB4;
+            color: #fff;
+        }
+
+        /* le 7eme enfant */
+        .exempleTable tr:nth-child(7){
+            background: #006400;
+            color: #fff;
+        }
+
+        /* ------------tableau 2------------ */
+
+        /* tous les enfants aux numéros impairs depuis la fin */
+        .exempleTable2 tr:nth-last-child(odd){
+            background: #990000;
+            color: #fff;
+        }
+
+        /* les deux enfants depuis la fin */
+        .exempleTable2 tr:nth-last-child(-n+2){
+            background: #045FB4;
+            color: #fff;
+        }
+      
+         /* le 7eme enfant en partant de la fin*/
+         .exempleTable2 tr:nth-last-child(7){
+            background: #006400;
+            color: #fff;
+        }
+
+    </style>
+
+
+</body>
+
+</html>

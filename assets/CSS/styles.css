@@ -1,0 +1,59 @@
+/* Le sélecteur universel étoile (*) s'adresse à tous les éléments */
+
+@font-face{
+    font-family: police;
+    src: url('../fonts/Acme-Regular.ttf')
+}
+
+
+body {
+    font-family: 'police';
+    background: linear-gradient(to bottom right, blue, white);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Creation d'une classe CSS avec le selecteur . */
+
+.info {
+    background-color: blue;
+}
+
+.premier {
+    font-size: 30px;
+}
+
+#font {
+    font-family: Serif;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+/* Selecteur descendant */
+
+/* Ici, on cible tous les enfants li de la balise ul */
+
+ul>li {
+    color: white;
+    background: #FF4040;
+    margin: 14px 14px 14px 14px;
+    list-style: square;
+}
+
+p.rouge {
+    color: red;
+}
+
+div.code {
+    font-family: Courier New;
+}
+
+div.exemple {
+    font-family: Courier New;
+}
+
+ol>li {
+    background: yellow;
+}
