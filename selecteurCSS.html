@@ -100,112 +100,162 @@
         </tr>
 
     </table>
+    <hr>
 
+    <!-- --------- exercice1------- -->
+    <div class="brass">Texte dans un div de classe brass</div>
+    <div class="br56">Texte dans un div de classe b56</div>
+    <div class="st45">Texte dans un div de classe st45</div>
+    <div class="lo">Texte dans un div de classe lo</div>
+    <ol>
+        <li>un</li>
+        <li>deux</li>
+        <li>trois</li>
+        <li>quatre</li>
+        <li>cinq</li>
+    </ol>
+    <form>
+        <input type="checkbox" checked><label>premier</label>
+        <input type="checkbox" checked><label>deuxième</label>
+        <input type="checkbox"><label>troisième</label>
+    </form>
 
-    <style>
-        div p:first-child {
-            font-weight: bold;
-        }
+    <!-- Quelle syntaxe utiliser pour s'adresser :
+    1) Aux éléments div dont l'attribut class commence par "br"
+    2) Aux éléments div dont l'attribut class contient la lettre "t"
+    3) L'avant-dernier élément li enfant de ol
+    4) Le troisième enfant li de l'élément ol de classe "t"
+    5) Les éléments checkbox qui sont cochés -->
 
-        input[type="text"]:focus {
-            background: red;
-        }
-        p.exemple{
-            margin: 0;
-            padding: 10px;
-            color: black;
-        }
-        /* [attr^="stringValue"] 
-        - permet de selectionner un element DOM dont l'attribut 'attr' commence exactement par la valeur "stringValue"
-        - ici, permet d'appliquer du style à toutes les balises p dont la valeur de l'attribut title commence par "ess"
-         */
-        p.exemple[title^="ess"]{
-            color: blue;
-            background: red;
-        }
-        /* [attr$="stringValue"] 
-        - permet de selectionner un element DOM dont l'attribut 'attr' finit par la valeur "stringValue"
-        - ici, permet d'appliquer du style à toutes les balises p dont la valeur de l'attribut title finit par "ent"
-         */
-        p.exemple[title$="ent"]{
-            color: red;
-            background: blue;
-        }
-        /* [attr*="stringValue"] 
-        - permet de selectionner un element DOM dont l'attribut 'attr' comporte au moins une fois par la valeur "stringValue"
-        - ici, permet d'appliquer du style à toutes les balises p dont la valeur de l'attribut title comporte "val"
-         */
-         p.exemple[title*="val"]{
-            color: yellow;
-            background: green;
-        }
-
-        div.exemple div~p{
-            color: #fff;
-            margin: 20px;
-            width: 200px;
-            padding: 5px;
-            border: 1px solid #333;
-            background: #006644;
-        }
-
-
-        .exempleTable, .exempleTable2{
-            width: 100%;
-            border: 1px solid #444;
-        }
-        /* :nth-child(expression) 
-        ce selecteur permet de cibler tous les element en se 
-        */
-
-        /* tous les enfants aux numéros pairs */
-        .exempleTable tr:nth-child(even){
-            background: #999999;
-            text-shadow: 2px 2px 5px #111;
-            color: #fff;
-        }
-
-        /* tous les enfants auxx numéros impairs */
-        .exempleTable tr:nth-child(odd){
-            background: #990000;
-            color: #fff;
-        }
-
-        /* tous les 3 enfants */
-        .exempleTable tr:nth-child(3n){
-            background: #045FB4;
-            color: #fff;
-        }
-
-        /* le 7eme enfant */
-        .exempleTable tr:nth-child(7){
-            background: #006400;
-            color: #fff;
-        }
-
-        /* ------------tableau 2------------ */
-
-        /* tous les enfants aux numéros impairs depuis la fin */
-        .exempleTable2 tr:nth-last-child(odd){
-            background: #990000;
-            color: #fff;
-        }
-
-        /* les deux enfants depuis la fin */
-        .exempleTable2 tr:nth-last-child(-n+2){
-            background: #045FB4;
-            color: #fff;
-        }
-      
-         /* le 7eme enfant en partant de la fin*/
-         .exempleTable2 tr:nth-last-child(7){
-            background: #006400;
-            color: #fff;
-        }
-
-    </style>
-
-
+  
 </body>
+<style>
+    div p:first-child {
+        font-weight: bold;
+    }
+
+    input[type="text"]:focus {
+        background: red;
+    }
+
+    p.exemple {
+        margin: 0;
+        padding: 10px;
+        color: black;
+    }
+
+    /* [attr^="stringValue"] 
+    - permet de selectionner un element DOM dont l'attribut 'attr' commence exactement par la valeur "stringValue"
+    - ici, permet d'appliquer du style à toutes les balises p dont la valeur de l'attribut title commence par "ess"
+     */
+    p.exemple[title^="ess"] {
+        color: blue;
+        background: red;
+    }
+
+    /* [attr$="stringValue"] 
+    - permet de selectionner un element DOM dont l'attribut 'attr' finit par la valeur "stringValue"
+    - ici, permet d'appliquer du style à toutes les balises p dont la valeur de l'attribut title finit par "ent"
+     */
+    p.exemple[title$="ent"] {
+        color: red;
+        background: blue;
+    }
+
+    /* [attr*="stringValue"] 
+    - permet de selectionner un element DOM dont l'attribut 'attr' comporte au moins une fois par la valeur "stringValue"
+    - ici, permet d'appliquer du style à toutes les balises p dont la valeur de l'attribut title comporte "val"
+     */
+    p.exemple[title*="val"] {
+        color: yellow;
+        background: green;
+    }
+
+    div.exemple div~p {
+        color: #fff;
+        margin: 20px;
+        width: 200px;
+        padding: 5px;
+        border: 1px solid #333;
+        background: #006644;
+    }
+
+
+    .exempleTable, .exempleTable2 {
+        width: 100%;
+        border: 1px solid #444;
+    }
+
+    /* :nth-child(expression) 
+    ce selecteur permet de cibler tous les element en se 
+    */
+
+    /* tous les enfants aux numéros pairs */
+    .exempleTable tr:nth-child(even) {
+        background: #999999;
+        text-shadow: 2px 2px 5px #111;
+        color: #fff;
+    }
+
+    /* tous les enfants auxx numéros impairs */
+    .exempleTable tr:nth-child(odd) {
+        background: #990000;
+        color: #fff;
+    }
+
+    /* tous les 3 enfants */
+    .exempleTable tr:nth-child(3n) {
+        background: #045FB4;
+        color: #fff;
+    }
+
+    /* le 7eme enfant */
+    .exempleTable tr:nth-child(7) {
+        background: #006400;
+        color: #fff;
+    }
+
+    /* ------------tableau 2------------ */
+
+    /* tous les enfants aux numéros impairs depuis la fin */
+    .exempleTable2 tr:nth-last-child(odd) {
+        background: #990000;
+        color: #fff;
+    }
+
+    /* les deux enfants depuis la fin */
+    .exempleTable2 tr:nth-last-child(-n+2) {
+        background: #045FB4;
+        color: #fff;
+    }
+
+    /* le 7eme enfant en partant de la fin*/
+    .exempleTable2 tr:nth-last-child(7) {
+        background: #006400;
+        color: #fff;
+    }
+
+    /* -----------exercice1---------- */
+    div[class^="br"] {
+        color: red;
+    }
+
+    div[class*="t"] {
+        color: blue;
+    }
+
+    ol li:nth-last-child(2) {
+        background: blue;
+    }
+
+    ol[class="t"] li:nth-child(3) {
+        background: blue;
+    }
+
+    input[type=checkbox]:checked+label {
+        color: red;
+    }
+    
+</style>
 
 </html>

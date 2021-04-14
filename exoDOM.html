@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exo DOM</title>
+    <link rel="stylesheet" href="assets/CSS/exoDOM.css">
+</head>
+
+<body>
+    <!-- ------- exo 1 ------- -->
+    <p id="parag1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere nobis sapiente sit quo mollitia?
+        Eaque possimus
+        velit, nesciunt odio esse iusto? In iure voluptatum cumque minima ex nulla inventore. Modi!</p>
+
+    <button onclick="changer_style()">Changer style</button>
+    <hr>
+
+
+    <!-- ------- exo 2 ------- -->
+    <p><a id="w3r" type="text/html" hreflang="en‐us" rel="nofollow" target="_self"
+            href="https://www.w3resource.com/">w3resource</a></p>
+    <button onclick="getAttributes()">Click here to get attributes value</button>
+    <hr>
+
+
+    <!-- ------- exo 3 ------- -->
+    <form id="form1" onsubmit="getFormvalue();return false">
+        Firstname:<input type="text" name="fname" value="David"><br>
+        Lastname:<input type="text" name="lname" value="Beckham"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+    <script src="assets/js/exoDOM.js"></script>
+</body>
+
+</html>
